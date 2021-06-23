@@ -1,0 +1,13 @@
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\obj\Debug\netcoreapp3.1\Calculadora.csproj.AssemblyReference.cache
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\obj\Debug\netcoreapp3.1\Calculadora.AssemblyInfoInputs.cache
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\obj\Debug\netcoreapp3.1\Calculadora.AssemblyInfo.cs
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\obj\Debug\netcoreapp3.1\Calculadora.csproj.CoreCompileInputs.cache
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\bin\Debug\netcoreapp3.1\Calculadora.exe
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\bin\Debug\netcoreapp3.1\Calculadora.deps.json
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\bin\Debug\netcoreapp3.1\Calculadora.runtimeconfig.json
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\bin\Debug\netcoreapp3.1\Calculadora.runtimeconfig.dev.json
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\bin\Debug\netcoreapp3.1\Calculadora.dll
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\bin\Debug\netcoreapp3.1\Calculadora.pdb
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\obj\Debug\netcoreapp3.1\Calculadora.dll
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\obj\Debug\netcoreapp3.1\Calculadora.pdb
+D:\ProjetosEstagioInfoSis\Calculadora\ConsoleApp1\Calculadora\obj\Debug\netcoreapp3.1\Calculadora.genruntimeconfig.cache
