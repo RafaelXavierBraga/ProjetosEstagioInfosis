@@ -140,7 +140,11 @@ namespace CalculadoraPosFixada
                 Console.Clear();
 
 
-                EfetuaCalculo(numeros, operacoes);
+                if (numeros.Count > 0)
+                {
+                    EfetuaCalculo(numeros, operacoes);
+                }
+               
 
                 Console.WriteLine("Deseja efetuar uma nova conta? 's' ou 'n'");
                 opcao = Console.ReadLine();
