@@ -1,0 +1,13 @@
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\bin\Debug\netcoreapp3.1\Calculadora2_0.exe
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\bin\Debug\netcoreapp3.1\Calculadora2_0.deps.json
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\bin\Debug\netcoreapp3.1\Calculadora2_0.runtimeconfig.json
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\bin\Debug\netcoreapp3.1\Calculadora2_0.runtimeconfig.dev.json
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\bin\Debug\netcoreapp3.1\Calculadora2_0.dll
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\bin\Debug\netcoreapp3.1\Calculadora2_0.pdb
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\obj\Debug\netcoreapp3.1\Calculadora2_0.csproj.AssemblyReference.cache
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\obj\Debug\netcoreapp3.1\Calculadora2_0.AssemblyInfoInputs.cache
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\obj\Debug\netcoreapp3.1\Calculadora2_0.AssemblyInfo.cs
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\obj\Debug\netcoreapp3.1\Calculadora2_0.csproj.CoreCompileInputs.cache
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\obj\Debug\netcoreapp3.1\Calculadora2_0.dll
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\obj\Debug\netcoreapp3.1\Calculadora2_0.pdb
+D:\ProjetosEstagioInfoSis\ProjetosEstagioInfoSis\Calculadora2.0\Calculadora2_0\Calculadora2_0\obj\Debug\netcoreapp3.1\Calculadora2_0.genruntimeconfig.cache
