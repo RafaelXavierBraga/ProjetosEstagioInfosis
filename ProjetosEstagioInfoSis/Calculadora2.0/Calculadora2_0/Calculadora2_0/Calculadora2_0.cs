@@ -83,6 +83,10 @@ namespace Calculadora2_0
                     Console.Clear();
                     Console.WriteLine("Nova Operação:");
                 }
+                else {
+                    Console.Clear();
+                    Console.WriteLine("Opção Invalida");
+                }
             } while (operacao != "sair");
             
         }
