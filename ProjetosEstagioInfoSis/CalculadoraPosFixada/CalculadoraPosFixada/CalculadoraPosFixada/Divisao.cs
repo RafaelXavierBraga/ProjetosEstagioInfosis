@@ -16,7 +16,9 @@ namespace CalculadoraPosFixada
         {
             //Caso seja feito uma divisão por zero retorna apenas o valor de a.
             if (b != 0) return a / b;
-            return a;
+            Console.WriteLine("\nDivisão por Zero programa Abortado");
+            System.Environment.Exit(0);
+            return a/b;
         }
     }
 }

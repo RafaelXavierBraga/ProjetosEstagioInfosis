@@ -26,12 +26,7 @@ namespace CalculadoraPosFixada
                 {
                     if (double.TryParse(op, out numero))
                     {
-                        Console.WriteLine("Numero Valido");
                         lista.Add(numero);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Valor Invalido");
                     }
                 }
 
@@ -66,21 +61,10 @@ namespace CalculadoraPosFixada
                         //Se o char lido for 1 valido
                         if (operacao == '+' || operacao == '-' || operacao == '*' || operacao == '/')
                         {
-                            Console.WriteLine("Operacao Valida");
                             lista.Add(operacao);
                             cont++;
                         }
-                        else
-                        {
-                            Console.WriteLine("Valor Invalido");
-                        }
-
                     }
-                    else
-                    {
-                        Console.WriteLine("Valor Invalido");
-                    }
-
                 }
             }
             
@@ -96,32 +80,58 @@ namespace CalculadoraPosFixada
         public static void EfetuaCalculo(List<double> listaNumeros, List<char> listaOperacoes) 
         {
             double total = listaNumeros[0];
+            int cont = 1;
 
-            Console.Write(listaNumeros[0]);
-            //Efetua os calculos e print das operações
-            for (int i = 0; i < listaOperacoes.Count; i++ ) 
+            //Caso tenha mais de 1 elemento na lista de números
+            if (listaNumeros.Count > 1)
             {
-                if (listaOperacoes[i] == '+')
+                Console.Write(listaNumeros[0]);
+                //Efetua os calculos e print das operações
+                foreach(char operacao in listaOperacoes) 
                 {
-                    total = Soma.SomaNumeros(total, listaNumeros[i+1]);
+                    Console.Write(" " + operacao + " ");
+                    Console.Write(listaNumeros[cont]);
+                    
+                    switch (operacao)
+                    {
+                        case '+':
+                            total = Soma.SomaNumeros(total, listaNumeros[cont]);
+                            break;
+                        case '-':
+                            total = Subtracao.SubtraiNumeros(total, listaNumeros[cont]);
+                            break;
+                        case '/':
+                            total = Divisao.DivideNumeros(total, listaNumeros[cont]);
+                            break;
+                        case '*':
+                            total = Multiplicacao.MultiplicaNumeros(total, listaNumeros[cont]);
+                            break;
+                    }
+                    
+                    
+                    cont++;
                 }
-                else if (listaOperacoes[i] == '/')
-                {
-                    total = Divisao.DivideNumeros(total, listaNumeros[i + 1]);
-                }
-                else if (listaOperacoes[i] == '-')
-                {
-                    total = Subtracao.SubtraiNumeros(total, listaNumeros[i + 1]);
-                }
-                else
-                {
-                    total = Multiplicacao.MultiplicaNumeros(total, listaNumeros[i + 1]);
-                }
-                
-                Console.Write(" " + listaOperacoes[i] + " ");
-                Console.Write(listaNumeros[i+1]);
+                Console.WriteLine(" = " + total);
             }
-            Console.WriteLine(" = "+ total);
+            else 
+            {
+                Console.WriteLine("Apenas foi digitado o valor " + total);
+            }
+            
+        }
+
+        /// <summary>
+        /// Metodo que imprime os valores contidos em uma lista de doubles;
+        /// </summary>
+        /// <param name="l">List<double></param>
+        public static void PrintaListaNumeros(List<double> l) 
+        {
+            Console.Write("Numeros Digitados: ");
+            foreach (double n in l) 
+            {
+                Console.Write(n + " ");
+            }
+            Console.Write("\n");
         }
 
         public static void Main(string[] args)
@@ -136,6 +146,7 @@ namespace CalculadoraPosFixada
 
                 numeros = LeNumeros(numeros);
                 Console.Clear();
+                PrintaListaNumeros(numeros);
                 operacoes = LeOperacoes(operacoes, numeros.Count);
                 Console.Clear();
 
@@ -144,17 +155,21 @@ namespace CalculadoraPosFixada
                 {
                     EfetuaCalculo(numeros, operacoes);
                 }
-               
 
-                Console.WriteLine("Deseja efetuar uma nova conta? 's' ou 'n'");
-                opcao = Console.ReadLine();
-                Console.Clear();
-                //Verificao se a opcao digitada foi valida
-                if (opcao != "s" && opcao != "n") 
+                do
                 {
+                    Console.WriteLine("Deseja efetuar uma nova conta? 's' ou 'n'");
+                    opcao = Console.ReadLine();
                     Console.Clear();
-                    Console.WriteLine("Opcao Invalida");
-                }
+                    //Verificao se a opcao digitada foi valida
+                    if (opcao != "s" && opcao != "n")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Opcao Invalida");
+                    }
+                } while (opcao != "s" && opcao != "n");
+                
+
             } while (opcao != "n");
             
         }
