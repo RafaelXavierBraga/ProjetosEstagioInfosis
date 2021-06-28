@@ -183,7 +183,7 @@ namespace VilaoEletrico
             this.ImprimeDados();
             Console.WriteLine("------------------------------------------------------------------------\n");
 
-            if (this.listaItens.Count < 1) Console.WriteLine("Não houve Itens Cadastrados");
+            if (this.listaItens.Count < 1) Console.WriteLine("Não houve Itens Cadastrados.");
             else
             {
                 //Ordenação da lista para obter o primeiro e ultimo

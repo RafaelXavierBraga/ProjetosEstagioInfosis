@@ -7,7 +7,7 @@ namespace VilaoEletrico
         static void Main(string[] args)
         {
             Sistema sistema = new Sistema();
-            //Inicializando Sistema
+            
             sistema.CadastrarValoresDoSistema();
             sistema.ImprimeDados();
             sistema.CadastrarItens();
