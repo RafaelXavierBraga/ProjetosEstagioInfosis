@@ -171,6 +171,7 @@ namespace VilaoEletrico
             if (this.listaItens.Count < 1) Console.WriteLine("Não houve Itens Cadastrados");
             else
             {
+                //Ordenação da lista para obter o primeiro e ultimo
                 listaItens.Sort(new OrdernarItemPorUso());
                 Console.WriteLine("ITEM QUE TEVE MAIOR USO: \n");
                 listaItens[listaItens.Count-1].ImprimeItem();
@@ -199,7 +200,7 @@ namespace VilaoEletrico
 
                 Console.WriteLine("LISTA DE PRODUTOS: \n");
 
-                this.ImprimeListaItens();
+                this.ImprimeValorConta();
                 
             }
 
@@ -219,7 +220,7 @@ namespace VilaoEletrico
 
             }
             maior.ImprimeItem();
-            Console.WriteLine("Valor: " + this.CalculaValor(maior).ToString("C") + "\n");
+            Console.WriteLine("Valor do item: " + this.CalculaValor(maior).ToString("C") + "\n");
         }
 
 
@@ -235,21 +236,26 @@ namespace VilaoEletrico
                 if (this.CalculaValor(i) < this.CalculaValor(menor)) menor = i;
             }
             menor.ImprimeItem();
-            Console.WriteLine("Valor: " + this.CalculaValor(menor).ToString("C") + "\n");
+            Console.WriteLine("Valor do item: " + this.CalculaValor(menor).ToString("C") + "\n");
         }
 
         /// <summary>
-        /// Imprime a lista de itens com seu tempo de uso e valores
+        /// Imprime a lista de itens com seu tempo de uso e valores, junto da soma total dos valores
         /// </summary>
-        public void ImprimeListaItens() 
+        public void ImprimeValorConta() 
         {
+            double total = 0;
+            
             foreach (Item i in listaItens)
             {
                 i.ImprimeItem();
                 Console.WriteLine("Uso: " + i.GetTempoDeUso() * 30 + " horas");
+                this.ImprimeTaxa(i);
                 Console.WriteLine("Valor: " + this.CalculaValor(i).ToString("C") + "\n");
-
+                total += this.CalculaValor(i);
             }
+            Console.WriteLine("------------------------------------------------------------------------\n");
+            Console.WriteLine("Valor total da conta: "+ total.ToString("C"));
         }
 
         /// <summary>
@@ -260,13 +266,32 @@ namespace VilaoEletrico
         public double CalculaValor(Item i) 
         {
             double valor = ((i.GetConsumo() * 30 * i.GetTempoDeUso()) / 1000) * this.valorTarifa;
-            double total = valor;
+            double total = Math.Round(valor,2);
 
-            total += valor * (this.pis / 100);
-            total += valor * (this.cofins / 100);
-            total += valor * (this.icms / 100);
+            total += Math.Round(valor * (this.icms / 100),2);
+
+            total += Math.Round(valor * (this.pis / 100),2);
+
+            total += Math.Round(valor * (this.cofins / 100),2);
 
             return total;
+        }
+
+        /// <summary>
+        /// Imprime o valor das taxas sobre um item;
+        /// </summary>
+        /// <param name="i">Item</param>
+        public void ImprimeTaxa(Item i) 
+        {
+            double valor = ((i.GetConsumo() * 30 * i.GetTempoDeUso()) / 1000) * this.valorTarifa;
+            
+            Console.WriteLine("Valor sem Taxa: " + Math.Round(valor,2).ToString("C"));
+
+            Console.WriteLine("Taxa ICMS: " + Math.Round((valor * (this.icms / 100)),2).ToString("C"));
+
+            Console.WriteLine("Taxa PIS: " + Math.Round((valor * (this.pis / 100)),2).ToString("C"));
+
+            Console.WriteLine("Taxa COFINS: " + Math.Round((valor * (this.cofins / 100)),2).ToString("C"));
         }
 
 

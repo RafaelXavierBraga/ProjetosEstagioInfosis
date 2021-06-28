@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProjetosEstagioInfoSis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico.csproj": {}
+    "D:\\ProjetosEstagioInfosis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico.csproj": {}
   },
   "projects": {
-    "D:\\ProjetosEstagioInfoSis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico.csproj": {
+    "D:\\ProjetosEstagioInfosis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjetosEstagioInfoSis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico.csproj",
+        "projectUniqueName": "D:\\ProjetosEstagioInfosis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico.csproj",
         "projectName": "VilaoEletrico",
-        "projectPath": "D:\\ProjetosEstagioInfoSis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico.csproj",
+        "projectPath": "D:\\ProjetosEstagioInfosis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico.csproj",
         "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjetosEstagioInfoSis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\obj\\",
+        "outputPath": "D:\\ProjetosEstagioInfosis\\ProjetosEstagioInfoSis\\VilaoEletrico\\VilaoEletrico\\VilaoEletrico\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
