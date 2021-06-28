@@ -59,10 +59,14 @@ namespace VilaoEletrico
         {
             string valor;
             Console.WriteLine("Digite o valor da tarifa do Kw/h:");
+            valor = Console.ReadLine();
             do
             {
-                valor = Console.ReadLine();
-                
+                if (!double.TryParse(valor, out this.valorTarifa))
+                {
+                    Console.Clear();
+                    valor = Console.ReadLine();
+                }
             } while (!double.TryParse(valor, out this.valorTarifa));
         }
 
@@ -73,11 +77,9 @@ namespace VilaoEletrico
         {
             Console.WriteLine("Digite a cor da bandeira: ('verde','amarela','vermelha')");
             string op;
-            do
-            {
-                op = Console.ReadLine();
-                if (op == "verde" || op == "amarela" || op == "vermelha") this.bandeira = op;
-            } while (op != "vermelha" && op !="amarela" && op !="verde");
+
+            op = Console.ReadLine();
+            this.bandeira = op;
 
         }
 
@@ -88,9 +90,14 @@ namespace VilaoEletrico
         {
             string valor;
             Console.WriteLine("Digite o valor do ICMS em %:");
+            valor = Console.ReadLine();
             do
             {
-                valor = Console.ReadLine();
+                if (!double.TryParse(valor, out this.icms))
+                {
+                    Console.Clear();
+                    valor = Console.ReadLine();
+                }
 
             } while (!double.TryParse(valor, out this.icms));
         }
@@ -102,10 +109,14 @@ namespace VilaoEletrico
         {
             string valor;
             Console.WriteLine("Digite o valor do PIS em %:");
+            valor = Console.ReadLine();
             do
             {
-                valor = Console.ReadLine();
-
+                if (!double.TryParse(valor, out this.pis))
+                {
+                    Console.Clear();
+                    valor = Console.ReadLine();
+                }
             } while (!double.TryParse(valor, out this.pis));
         }
 
@@ -116,10 +127,14 @@ namespace VilaoEletrico
         {
             string valor;
             Console.WriteLine("Digite o valor do COFINS em %:");
+            valor = Console.ReadLine();
             do
             {
-                valor = Console.ReadLine();
-
+                if (!double.TryParse(valor, out this.cofins))
+                {
+                    Console.Clear();
+                    valor = Console.ReadLine();
+                }
             } while (!double.TryParse(valor, out this.cofins));
         }
 

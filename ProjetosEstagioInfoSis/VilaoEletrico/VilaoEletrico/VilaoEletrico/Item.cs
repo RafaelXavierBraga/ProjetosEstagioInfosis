@@ -44,9 +44,14 @@ namespace VilaoEletrico
         {
             string valor;
             Console.WriteLine("\nDigite o valor do consumo em w/h:");
+            valor = Console.ReadLine();
             do
             {
-                valor = Console.ReadLine();
+                if (!double.TryParse(valor, out this.consumo))
+                {
+                    Console.Clear();
+                    valor = Console.ReadLine();
+                }
 
             } while (!double.TryParse(valor, out this.consumo));
         }
@@ -58,9 +63,14 @@ namespace VilaoEletrico
         {
             string valor;
             Console.WriteLine("\nDigite o valor do tempo de uso em horas por dia:");
+            valor = Console.ReadLine();
             do
             {
-                valor = Console.ReadLine();
+                if (!double.TryParse(valor, out this.tempoDeUso))
+                {
+                    Console.Clear();
+                    valor = Console.ReadLine();
+                }
 
             } while (!double.TryParse(valor, out this.tempoDeUso));
         }
