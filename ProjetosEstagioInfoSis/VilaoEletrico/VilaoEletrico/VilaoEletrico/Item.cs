@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace VilaoEletrico
 {
-    public class Item 
+    public class Item
     {
         private string nome;
         private string local;
@@ -18,29 +16,29 @@ namespace VilaoEletrico
         public void PreencherItem()
         {
             this.ImprimeItem();
-            
+
             Console.WriteLine("\nDigite o nome do item:");
             this.nome = Console.ReadLine();
-            
+
             Console.Clear();
             this.ImprimeItem();
-            
+
             Console.WriteLine("\nDigite o local do item:");
             this.local = Console.ReadLine();
-            
+
             Console.Clear();
             this.ImprimeItem();
-            this.LeConsumo(); 
-           
+            this.LeConsumo();
+
             Console.Clear();
             this.ImprimeItem();
             this.LeTempoDeUso();
 
             //calculo de consumo no mes
             this.usoPorMes = this.tempoDeUso * 30;
-            
+
             Console.Clear();
-            
+
         }
 
         /// <summary>
@@ -84,19 +82,19 @@ namespace VilaoEletrico
         /// <summary>
         /// Metodo que imprime os dados de um Item.
         /// </summary>
-        public void ImprimeItem() 
+        public void ImprimeItem()
         {
             Console.WriteLine("Nome do Item: " + this.nome);
-            Console.WriteLine("Local: "+ this.local);
-            Console.WriteLine("Consumo: "+ this.consumo + " W/h");
-            Console.WriteLine("Tempo de uso por dia: "+ this.tempoDeUso + " h/dia");
-            Console.WriteLine("Tempo de uso no mês: "+ this.usoPorMes + " horas");
+            Console.WriteLine("Local: " + this.local);
+            Console.WriteLine("Consumo: " + this.consumo + " W/h");
+            Console.WriteLine("Tempo de uso por dia: " + this.tempoDeUso + " h/dia");
+            Console.WriteLine("Tempo de uso no mês: " + this.usoPorMes + " horas");
         }
 
-        
+
         //Getters
-      
-        public double GetConsumo() 
+
+        public double GetConsumo()
         {
             return this.consumo;
         }

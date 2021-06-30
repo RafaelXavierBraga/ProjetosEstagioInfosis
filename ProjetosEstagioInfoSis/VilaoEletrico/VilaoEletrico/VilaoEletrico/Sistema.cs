@@ -1,33 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace VilaoEletrico
 {
     public class Sistema
     {
-        private double valorTarifa;   
-        private string bandeira;       
-        private double icms;           
-        private double pis;            
-        private double cofins;         
+        private double valorTarifa;
+        private string bandeira;
+        private double icms;
+        private double pis;
+        private double cofins;
         private List<Item> listaItens;
 
         public Sistema()
         {
             this.listaItens = new List<Item>();
         }
-        
-        
+
+
         /// <summary>
         /// Metodo que faz o cadastro dos dados do Sistema
         /// </summary>
-        public void CadastrarValoresDoSistema() 
+        public void CadastrarValoresDoSistema()
         {
             Console.WriteLine("Cadastrando Dados do Sistema:\n");
             this.ImprimeDados();
             this.LeValorTarifa();
-            
+
             Console.Clear();
             Console.WriteLine("Cadastrando Dados do Sistema:\n");
             this.ImprimeDados();
@@ -55,7 +54,7 @@ namespace VilaoEletrico
         /// <summary>
         /// Metodo que le o valor da tarifa do KW/h
         /// </summary>
-        public void LeValorTarifa() 
+        public void LeValorTarifa()
         {
             string valor;
             Console.WriteLine("Digite o valor da tarifa do Kw/h:");
@@ -77,11 +76,11 @@ namespace VilaoEletrico
         {
             Console.WriteLine("Digite a cor da bandeira: ('verde','amarela','vermelha p1', 'vermelha p2')");
             string op;
-            
+
             do
             {
                 op = Console.ReadLine().ToLower();
-                switch (op) 
+                switch (op)
                 {
                     case "verde":
                         this.bandeira = op;
@@ -98,11 +97,11 @@ namespace VilaoEletrico
                     default:
                         Console.Clear();
                         this.ImprimeDados();
-                        Console.WriteLine("Não existe bandeira '"+op+"'");
+                        Console.WriteLine("Não existe bandeira '" + op + "'");
                         Console.WriteLine("Digite uma bandeira válida: ('verde','amarela','vermelha p1', 'vermelha p2')");
                         break;
                 }
-            }while (op != "verde" && op != "amarela" && op != "vermelha p1" && op != "vermelha p2");
+            } while (op != "verde" && op != "amarela" && op != "vermelha p1" && op != "vermelha p2");
             this.bandeira = op;
 
         }
@@ -173,19 +172,19 @@ namespace VilaoEletrico
             do
             {
                 if (listaItens.Count > 0) Console.WriteLine("\nDeseja cadastrar um novo item? 's' ou 'n'");
-                else Console.WriteLine("Deseja cadastrar um item? 's' ou 'n'"); 
-                
+                else Console.WriteLine("Deseja cadastrar um item? 's' ou 'n'");
+
                 op = Console.ReadLine().ToLower();
                 switch (op)
                 {
                     case "s":
                         Console.Clear();
                         Console.WriteLine("----Novo Item----\n");
-                        
+
                         Item item = new Item();
                         item.PreencherItem();
                         listaItens.Add(item);
-                        
+
                         Console.WriteLine("Item Cadastrado.\n");
                         item.ImprimeItem();
                         break;
@@ -197,13 +196,13 @@ namespace VilaoEletrico
                         Console.WriteLine("Não existe opção '" + op + "'");
                         break;
                 }
-            } while (op != "n");  
+            } while (op != "n");
         }
 
         /// <summary>
         /// Metodo que imprime o Relatorio da conta de luz
         /// </summary>
-        public void ImprimeRelatorio() 
+        public void ImprimeRelatorio()
         {
             Console.WriteLine("------------------------------CONTA DE LUZ------------------------------\n");
             this.ImprimeDados();
@@ -257,7 +256,7 @@ namespace VilaoEletrico
         private void ImprimeMaiorGasto()
         {
             Item maior = listaItens[0];
-            
+
             foreach (Item i in listaItens)
             {
 
@@ -287,7 +286,7 @@ namespace VilaoEletrico
         /// <summary>
         /// Imprime a lista de itens com o valor a pagar pelo seu consumo
         /// </summary>
-        public void ImprimeItens() 
+        public void ImprimeItens()
         {
             foreach (Item i in listaItens)
             {
@@ -301,10 +300,10 @@ namespace VilaoEletrico
         /// </summary>
         /// <param name="i">Item</param>
         /// <returns>double</returns>
-        public double CalculaValorConsumo(Item i) 
+        public double CalculaValorConsumo(Item i)
         {
             double valor = ((i.GetConsumo() * i.GetUsoPorMeS()) / 1000) * this.valorTarifa;
-            double total = Math.Round(valor,2);
+            double total = Math.Round(valor, 2);
 
             return total;
         }
@@ -313,14 +312,14 @@ namespace VilaoEletrico
         /// Calcula e Imprime o valor das taxas e da conta;
         /// </summary>
         /// <param name="i">Item</param>
-        public void ImprimeValorDaConta() 
+        public void ImprimeValorDaConta()
         {
             double consumo = 0;
             double taxaPIS = 0;
             double taxaCOFINS = 0;
             double taxaICMS = 0;
 
-            foreach (Item i in listaItens) 
+            foreach (Item i in listaItens)
             {
                 consumo += this.CalculaValorConsumo(i);
             }
@@ -336,29 +335,29 @@ namespace VilaoEletrico
             }
 
             Console.WriteLine("-----TRIBUTOS-----");
-            taxaPIS = Math.Round(consumo * (this.pis / 100),2);
-            Console.WriteLine("Taxa PIS: " + Math.Round(taxaPIS,2).ToString("C"));
+            taxaPIS = Math.Round(consumo * (this.pis / 100), 2);
+            Console.WriteLine("Taxa PIS: " + Math.Round(taxaPIS, 2).ToString("C"));
 
-            taxaCOFINS = Math.Round(consumo * (this.cofins / 100),2);
-            Console.WriteLine("Taxa COFINS: " + Math.Round(taxaCOFINS,2).ToString("C"));
+            taxaCOFINS = Math.Round(consumo * (this.cofins / 100), 2);
+            Console.WriteLine("Taxa COFINS: " + Math.Round(taxaCOFINS, 2).ToString("C"));
 
-            taxaICMS = Math.Round((consumo + taxaPIS + taxaCOFINS) * (this.icms / 100),2);
+            taxaICMS = Math.Round((consumo + taxaPIS + taxaCOFINS) * (this.icms / 100), 2);
             Console.WriteLine("Taxa ICMS: " + Math.Round(taxaICMS, 2).ToString("C"));
 
             Console.WriteLine("\n------------------------------------------------------------------------\n");
-            Console.WriteLine("Valor total da conta: "+ (consumo+taxaPIS+taxaCOFINS+taxaICMS).ToString("C"));
+            Console.WriteLine("Valor total da conta: " + (consumo + taxaPIS + taxaCOFINS + taxaICMS).ToString("C"));
         }
 
 
         /// <summary>
         /// Metodo que imprime os dados do Sistema
         /// </summary>
-        public void ImprimeDados() 
+        public void ImprimeDados()
         {
             Console.WriteLine("Valor da Tarifa: R$ " + this.valorTarifa.ToString("F8") + " por Kw/h");
             Console.WriteLine("Bandeira: " + this.bandeira);
-            Console.WriteLine("PIS: "+this.pis.ToString("F2") + " %");
-            Console.WriteLine("COFINS: "+this.cofins.ToString("F2")+ " %");
+            Console.WriteLine("PIS: " + this.pis.ToString("F2") + " %");
+            Console.WriteLine("COFINS: " + this.cofins.ToString("F2") + " %");
             Console.WriteLine("ICMS: " + this.icms.ToString("F2") + " %" + "\n");
         }
 
