@@ -9,7 +9,6 @@ namespace VilaoEletrico
             Sistema sistema = new Sistema();
             
             sistema.CadastrarValoresDoSistema();
-            sistema.ImprimeDados();
             sistema.CadastrarItens();
             sistema.ImprimeRelatorio();
         }

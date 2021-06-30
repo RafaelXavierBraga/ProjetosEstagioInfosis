@@ -10,6 +10,7 @@ namespace VilaoEletrico
         private string local;
         private double consumo;
         private double tempoDeUso;
+        private double usoPorMes;
 
         /// <summary>
         /// Metodo que efetua a leitura dos dados e atribui aos campos.
@@ -17,11 +18,13 @@ namespace VilaoEletrico
         public void PreencherItem()
         {
             this.ImprimeItem();
+            
             Console.WriteLine("\nDigite o nome do item:");
             this.nome = Console.ReadLine();
             
             Console.Clear();
             this.ImprimeItem();
+            
             Console.WriteLine("\nDigite o local do item:");
             this.local = Console.ReadLine();
             
@@ -32,6 +35,9 @@ namespace VilaoEletrico
             Console.Clear();
             this.ImprimeItem();
             this.LeTempoDeUso();
+
+            //calculo de consumo no mes
+            this.usoPorMes = this.tempoDeUso * 30;
             
             Console.Clear();
             
@@ -83,16 +89,21 @@ namespace VilaoEletrico
             Console.WriteLine("Nome do Item: " + this.nome);
             Console.WriteLine("Local: "+ this.local);
             Console.WriteLine("Consumo: "+ this.consumo + " W/h");
-            Console.WriteLine("Tempo de Uso: "+ this.tempoDeUso + " h/dia");
+            Console.WriteLine("Tempo de uso por dia: "+ this.tempoDeUso + " h/dia");
+            Console.WriteLine("Tempo de uso no mês: "+ this.usoPorMes + " horas");
         }
 
-        public double GetTempoDeUso() 
-        {
-            return this.tempoDeUso;
-        }
+        
+        //Getters
+      
         public double GetConsumo() 
         {
             return this.consumo;
+        }
+
+        public double GetUsoPorMeS()
+        {
+            return this.usoPorMes;
         }
     }
 }
